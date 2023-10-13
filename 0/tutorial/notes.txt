@@ -1,2 +1,12 @@
 cargo new tutorial
 cargo run
+
+cat /dev/random | cargo run
+#error
+
+printf '\021\021' | cargo run
+#works?
+
+
+$ cat /dev/random | RUST_BACKTRACE=full cargo run 
+
