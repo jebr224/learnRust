@@ -10,3 +10,5 @@ printf '\021\021' | cargo run
 
 $ cat /dev/random | RUST_BACKTRACE=full cargo run 
 
+
+cargo clippy

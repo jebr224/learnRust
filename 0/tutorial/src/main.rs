@@ -15,9 +15,8 @@ fn main() {
     println!("Hello, {}! {}", name.trim_end(), greeting);
 
     const ONE_MIL: u32 = 1_000_000;
-    const PI: f32 = 3.141592;
     println!("printing constant 1,000,000 {}", ONE_MIL);
-    println!("printing constant PI {}", PI);
+    println!("printing constant PI {}", std::f32::consts::PI);
 
 
     // Unsigned integer : u8, u16, u32, u64, u128, usize
@@ -90,7 +89,6 @@ fn main() {
 
    let mut age: u32 = age.trim().parse()
        .expect("Age wasn't assigned a number");
-   age = age;
    println!("next year you will be {} years old", age + 1);
 
    let mut important_birthday: bool = false;
@@ -98,18 +96,11 @@ fn main() {
    if (age > 0) && (age <= 18){
         important_birthday = true;
         toys = true;
-   }else if (age == 21) || (age ==50){
-        important_birthday = true;
-   }else if (age >= 65){
+   }else if (age == 21) || (age ==50) || (age >= 65){
         important_birthday = true;
    }
 
    println!("important birtday : {}", important_birthday);
    println!("toys : {}", toys);
-   println!("can vote : {}", if age >=18 {
-       true
-   }
-   else{
-       false
-   })
+   println!("can vote : {}", age >=18)
 }
