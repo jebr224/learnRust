@@ -99,5 +99,44 @@ fn main() {
 
     println!("important birtday : {}", important_birthday);
     println!("toys : {}", toys);
-    println!("can vote : {}", age >= 18)
+    println!("can vote : {}", age >= 18);
+
+    let mut adult: bool = false;
+    match age {
+        1..=18 => println!("Not adult"),
+        19..=130 => println!("is Adult"),
+        _ => {
+            println!("age is older then 130, exit with error");
+            std::process::exit(1);
+        }
+    }
+
+    let arr: [i32; 14] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    println!("1st : {}", arr[0]);
+    println!("length : {}", arr.len());
+
+    let mut idx = 0;
+    loop {
+        if arr[idx] % 2 == 1 {
+            idx += 1;
+            continue;
+        }
+        if arr[idx] == 10 {
+            // if 10 removed from array
+            // index out of bounds: the len is 14 but the index is 14'
+            // this "could" be found at compile time,
+            // cago clippy is okay with this
+            break;
+        }
+        println!("val : {}", arr[idx]);
+        idx += 1;
+    }
+
+    idx = 0;
+    while idx < arr.len() {
+        println!("Arr[{}] = {}", idx, arr[idx]);
+        idx += 1
+    }
+
+    std::process::exit(0);
 }
