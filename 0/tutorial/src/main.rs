@@ -138,5 +138,44 @@ fn main() {
         idx += 1
     }
 
+    for val in arr.iter() {
+        println!("iter {}", val);
+    }
+
+    let food_tuple: (u8, String, f64) = (8, "pepperoni".to_string(), 100.0);
+
+    println!(
+        "The foods is called {} and it has {} calories, it is at {}%",
+        food_tuple.1, food_tuple.0, food_tuple.2
+    );
+
+    let mut st1: String = String::new();
+    st1.push('A');
+    st1.push_str("BCD");
+    println!("{}", st1);
+
+    let st3 = String::from("a b c d e f g h i j k l m n x");
+    println!("{}", st3);
+    let mut v1: Vec<char> = st3.chars().collect();
+    v1.sort();
+    v1.dedup();
+    for char in v1 {
+        print!("{}", char);
+    }
+    println!();
+
+    let stack_string: &str = "data";
+    let mut heap_string: String = stack_string.to_string();
+    println!("{}, {}", stack_string, heap_string);
+
+    let byte_arry = heap_string.as_bytes();
+
+    let mut check_sum: u64 = 0;
+    for i in byte_arry.iter() {
+        // check_sum += u64::from(i);
+        check_sum += *i as u64;
+    }
+    println!("check_sum {}", check_sum);
+
     std::process::exit(0);
 }
